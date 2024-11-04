@@ -1,8 +1,15 @@
 package com.cbfproject.student_data_system.student;
 
+import jakarta.persistence.*;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
