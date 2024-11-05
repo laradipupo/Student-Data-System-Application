@@ -1,28 +1,11 @@
 package com.cbfproject.student_data_system.student;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
-@Service
-public class StudentService {
-
-    private final StudentRepository studentRepository;
-
-    @Autowired
-    public StudentService(StudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
-    }
-
-    public List<Student> getStudents() {
-        return studentRepository.findAll();
-    }
-
-    public void addNewStudent(Student student) {
-        System.out.println(student );
-    }
+public interface StudentService {
+    public String createStudent(Student student);
+    public String updateStudent(Student student);
+    public String deleteStudent(Long studentId);
+    public Student getStudent(Long studentId);
+    public List<Student> getAllStudents();
 }
