@@ -45,6 +45,8 @@ public class StudentServiceImplementation implements StudentService {
 
     @Override
     public Student getStudent(Long studentId) {
+        if(studentRepository.findById(studentId).isEmpty())
+            throw new StudentNotFoundException("Student does not exist");
         return studentRepository.findById(studentId).get();
     }
 
