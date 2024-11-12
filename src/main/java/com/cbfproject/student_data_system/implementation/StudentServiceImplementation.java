@@ -1,29 +1,24 @@
-package com.cbfproject.student_data_system.student;
+package com.cbfproject.student_data_system.implementation;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cbfproject.student_data_system.exception.StudentNotFoundException;
+import com.cbfproject.student_data_system.model.Student;
+import com.cbfproject.student_data_system.repository.StudentRepository;
+import com.cbfproject.student_data_system.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 public class StudentServiceImplementation implements StudentService {
 
     StudentRepository studentRepository;
 
-//    @Autowired
+
     public StudentServiceImplementation(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
-
-
-//    public List<Student> getStudents() {
-//        return studentRepository.findAll();
-//    }
-//
-//    public void addNewStudent(Student student) {
-//        System.out.println(student );
-//    }
 
     @Override
     public String createStudent(Student student) {

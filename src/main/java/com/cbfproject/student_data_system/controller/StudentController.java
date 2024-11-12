@@ -1,50 +1,51 @@
-package com.cbfproject.student_data_system.student;
+package com.cbfproject.student_data_system.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cbfproject.student_data_system.model.Student;
+import com.cbfproject.student_data_system.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
-@RequestMapping(path = "/student")
+@RequestMapping(path = "/students")
 public class StudentController {
 
-//    private final StudentServiceImplementation studentService;
     StudentService studentService;
-//    @Autowired
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
-//get specific student details
+    //get specific student details
     @GetMapping("{studentId}")
     public Student getStudent(@PathVariable("studentId") Long studentId) {
         return studentService.getStudent(studentId);
     }
 
-//    get all student details
+    //    get all student details
     @GetMapping()
     public List<Student> getAllStudent() {
         return studentService.getAllStudents();
     }
 
-//    create student
+    //    create student
     @PostMapping
     public String addStudent(@RequestBody Student student) {
         studentService.createStudent(student);
         return "Student added successfully";
     }
 
-//    update student
+    //    update student
     @PutMapping
     public String updateStudent(@RequestBody Student student) {
         studentService.updateStudent(student);
         return "Student updated successfully";
     }
 
-//delete student
+    //delete student
     @DeleteMapping("{studentId}")
     public String deleteStudent(@PathVariable("studentId") Long studentId) {
         studentService.deleteStudent(studentId);
         return "Student deleted successfully";
     }
 }
+

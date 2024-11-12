@@ -1,4 +1,4 @@
-package com.cbfproject.student_data_system.student;
+package com.cbfproject.student_data_system.exception;
 
 import org.springframework.http.HttpStatus;
 

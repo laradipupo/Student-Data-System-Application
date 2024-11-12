@@ -1,4 +1,5 @@
-package com.cbfproject.student_data_system.student;
+package com.cbfproject.student_data_system.exception;
+
 
 public class StudentNotFoundException extends RuntimeException{
     public StudentNotFoundException(String message) {
@@ -9,3 +10,4 @@ public class StudentNotFoundException extends RuntimeException{
         super(message, cause);
     }
 }
+

@@ -1,6 +1,9 @@
-package com.cbfproject.student_data_system.student;
+package com.cbfproject.student_data_system.service;
+
+import com.cbfproject.student_data_system.model.Student;
 
 import java.util.List;
+
 
 public interface StudentService {
     public String createStudent(Student student);
@@ -9,3 +12,4 @@ public interface StudentService {
     public Student getStudent(Long studentId);
     public List<Student> getAllStudents();
 }
+

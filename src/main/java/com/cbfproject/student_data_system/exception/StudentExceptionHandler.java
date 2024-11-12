@@ -1,4 +1,5 @@
-package com.cbfproject.student_data_system.student;
+package com.cbfproject.student_data_system.exception;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class StudentExceptionHandler {
-    @ExceptionHandler(value = {StudentNotFoundException.class})
-    public ResponseEntity<Object> handleStudentNotFoundException(StudentNotFoundException studentNotFoundException) {
+
+   @ExceptionHandler(value = {StudentNotFoundException.class})
+    public ResponseEntity<Object> handleStudentExceptionNotFoundException(StudentNotFoundException studentNotFoundException) {
         StudentException studentException = new StudentException(
                 studentNotFoundException.getMessage(),
                 studentNotFoundException.getCause(),
